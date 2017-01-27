@@ -1,0 +1,8 @@
+To Do:
+
+- Position balle par rapport au joueur(requète spawn_bullet): Si balle est Èa tel distance du joueur.
+- Gestion d'inventaire.
+- Ajout controleur qui gère les requetes du serveur (mvc).
+- Création du chat ingame (chat request/update).
+- Place claim( add button beside the place name)
+

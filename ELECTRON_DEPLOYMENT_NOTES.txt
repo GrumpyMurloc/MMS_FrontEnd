@@ -1,0 +1,126 @@
+
+=====================================
+HOW TO DEPLOY MMS WITH ELECTRON.JS
+=====================================
+
+1. install node.js
+
+
+2. install electron.js
+
+	2.1 by running "npm install electron --save-dev" in the node.js command prompt
+	2.2 by copying an electron folder from whatever
+
+3. add MMS's main folder to electron\resources\
+
+
+4.turn MMS into an electron app (explicit code at the end of file)
+
+	4.1 add the file package.json to the app's root folder
+	4.2 add the file preload_electron to the app's root folder
+	4.3 in \script\import.js modify jquery's importation
+	4.4 rename MMS's main folder "app" (dunno if mandatory...)
+
+
+5.turn the app folder into an asar archive
+
+	5.1 install asar by running "npm install -g asar" in the node.js command prompt
+	5.2 run "asar pack <path\app-folder> <path\app.asar>"
+
+6.rename electron.exe (application) to whatev
+
+7. zip and share!
+
+
+=====================================
+FUCKING CODE SNIPPETS MOFOS
+=====================================
+
+
+FILE: package.json
+=====================================
+
+{
+	"name"		: "MMS",
+	"version"	: "0.1",
+	"main"		: "./preload_electron.js"
+}
+
+
+
+FILE: \script\import.js
+=====================================
+
+REPLACE THIS:
+
+quickLoad(	"./script/library/jquery-3.1.1.min.js"			);
+`
+
+WITH THIS:
+
+//weird jquery import because of electron
+document.write("<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>");  
+quickLoad(	"./script/library/jquery-3.1.1.min.js"			);
+document.write("<script>if (window.module) module = window.module;</script>");
+//actual imports
+
+
+
+FILE: preload_electron.js
+=====================================
+
+const electron = require('electron');             
+const {app, BrowserWindow} = electron;
+//const BrowserWindow = electron.BrowserWindow;
+//const app=electron.app;
+const path = require('path')
+const url = require('url')
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let win
+
+function createWindow () {
+  // Create the browser window.
+  win = new BrowserWindow({width: 800, height: 600})
+
+  // and load the index.html of the app.
+  win.loadURL(url.format({
+    pathname: path.join(__dirname, 'index.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
+
+  // Open the DevTools.
+  //win.webContents.openDevTools()
+
+  // Emitted when the window is closed.
+  win.on('closed', () => {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    win = null
+  })
+}
+
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
+app.on('ready', createWindow)
+
+// Quit when all windows are closed.
+app.on('window-all-closed', () => {
+  // On macOS it is common for applications and their menu bar
+  // to stay active until the user quits explicitly with Cmd + Q
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+
+app.on('activate', () => {
+  // On macOS it's common to re-create a window in the app when the
+  // dock icon is clicked and there are no other windows open.
+  if (win === null) {
+    createWindow()
+  }
+})

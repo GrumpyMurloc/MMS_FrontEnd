@@ -1,0 +1,197 @@
+body{
+	background-color:black;
+	background-position: center;
+	background-attachment: fixed;
+	height: 100%;
+	background-size: contain;
+	overflow:hidden;
+	background-repeat: no-repeat;
+}
+
+#bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto;
+  max-width:100%;
+  max-height:100%;
+}
+
+.connect label{
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.connect{
+	text-justify: left;
+	margin: 15%;
+	padding: 50px;
+	position: relative;
+	text-align: center;
+	background-color: rgba(222,191,135,1);
+	border: 5px solid #000;
+	border-radius: 9px;
+	box-shadow: 0 0px 0 0 #2c2c2c;
+}
+
+#menu{
+	size:100%;
+	align-items: center;
+	justify-content:center;
+	margin: 0px;
+	padding-top:250px;	
+}
+
+#chat{
+	padding:10px 10px 10px 10px;
+	width: 450px;
+    height: 250px;
+	bottom: 5px;
+    left: 5px;
+	position: absolute;
+}
+
+#sousmenu{
+	max-height: 434px;
+	width: 500px;
+	overflow-y:auto;
+	border: solid black 2px; 
+	position: relative;
+}
+
+canvas{
+	position: absolute;
+}
+
+#bResume{
+	position: relative;
+	margin-top:10%;
+}
+
+button:hover {
+  background: #657481;
+  text-decoration: none;
+}
+
+
+button{
+	background:    #465059;
+	border:        2px solid #000;
+	border-radius: 9px;
+	box-shadow:    0 0px 0 0 #2c2c2c;
+	color:         #fbfcf9;
+	display:       inline-block;
+	padding:       11px 30px;
+	font:          normal 400 24px/1 "Droid Serif", serif;
+	text-align:    center;
+	text-shadow:   1px 1px 0 #000;
+}
+
+#bClaim{
+	position: absolute;
+	right: 16px;
+	margin-top: 16px;
+	margin-bottom: 0px;
+}
+
+#operation{
+	position: relative;
+	margin-top: 5%;
+	margin-left: 25%;
+	margin-right: 25%; 
+}
+
+.item {
+	background-color:  #465059;
+	margin:0px;
+	border: 3px solid black;
+	position: relative;
+}
+.capitalize 
+{
+    text-transform:capitalize;
+}
+
+.item > p {
+	text-shadow:   1px 1px 0 #000;
+	font-size:160%;
+	margin-top: 7px;
+	font: normal 400 24px/1 "Droid Serif", serif;
+	color:  #fbfcf9;
+	padding: 10px;
+}
+
+#name{
+	position: relative;
+	height: 50px;
+	width: 35%;
+	left: 30%;
+	top:25px;
+	text-align: center;
+	margin: 0px;
+	font: normal 400 24px/1 "Droid Serif", serif;
+	color:  #fbfcf9;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#message{
+	position: relative;
+	text-align:center;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font: normal 400 24px/1 "Droid Serif", serif;
+	color:  #fbfcf9;
+}
+.bOperation{
+	position: absolute;
+    right: 10px;
+    top: 10px
+}
+.operation{
+	border-radius: 2px;
+}
+
+.chatHover{
+	background: rgba(0, 0, 0, 0.5);
+}
+
+#chatbox {
+    text-align:left;
+    background-color: rgba(0, 0, 0, 0.5);
+    height:87%;
+    width:100%;
+    border:1px solid #2e302e;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    overflow:auto; 
+}
+
+#usermsg {
+    width:100%;
+    border:1px solid #2e302e;
+    margin: 0 auto;
+    color: #fbfcf9;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+span{
+	margin: 5px;
+	color: #fbfcf9;
+}
+
+#login{
+	text-justify: left;
+}
+
+#btn_login, #btn_cancel, #btn_subscribe, #btn_subLogin{
+	margin-right: 10px;
+}
+.error_msg{
+	color:red;
+}

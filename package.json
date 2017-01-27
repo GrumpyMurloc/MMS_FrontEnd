@@ -1,0 +1,5 @@
+{
+	"name"		: "MMS",
+	"version"	: "0.1",
+	"main"		: "./preload_electron.js"
+}
