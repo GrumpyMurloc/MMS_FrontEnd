@@ -6,7 +6,9 @@ This is a top-down exploration game made in javascript using PixiJs as a graphic
 ### **Contributor**
 
 [Antoine Theriault-Brunet](https://github.com/anemones)
+
 [Étienne Demers](https://github.com/littledaxter)
+
 [Nicolas Leblanc](https://github.com/GrumpyMurloc)
 
 ### **How to install**
